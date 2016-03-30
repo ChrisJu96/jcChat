@@ -22,20 +22,24 @@ namespace Chat
     /// </summary>
     public partial class Client : Window
     {
-        private IPAddress serverIP;
-        private int serverPort;
+        private TcpClient tcpc;
+        private TcpListener tcpl;
 
-        public Client(string ipaddress, string port)
+        public Client()
         {
-            
-            this.serverIP = IPAddress.Parse(ipaddress);
-            this.serverPort = int.Parse(port);
             InitializeComponent();
 
-            // Start the Client
-            Start();
+
         }
 
+        void StartServer(string ip, string port)
+        {
+            IPAddress hostIP = IPAddress.Parse(ip);
+            int hostPort = int.Parse(port);
+
+            tcpl = new TcpListener(hostIP,hostPort);
+
+        }
         void Start()
         {
             TcpClient Client = new TcpClient();
@@ -58,9 +62,24 @@ namespace Chat
 
         }
 
+        void Send()
+        {
+
+        }
         private void bClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void bConnect_Click(object sender, RoutedEventArgs e)
+        {
+            Start();
+        }
+
+        private void bHost_Click(object sender, RoutedEventArgs e)
+        {
+            bHost.IsEnabled = false;
+            StartServer(tbHostIP.Text, tbHostPort.Text);
         }
     }
 }

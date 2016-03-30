@@ -21,7 +21,7 @@ namespace Chat
     public partial class MainWindow : Window
     {
         private Client client;
-        private Server server;
+        public string NameOfParticipant;
 
         public MainWindow()
         {
@@ -30,19 +30,12 @@ namespace Chat
 
         private void bStartClient_Click(object sender, RoutedEventArgs e)
         {
-            client = new Client(tbClientIP.Text, tbClientPort.Text);
+            NameOfParticipant = tbName.Text;
+            client = new Client();
+            client.Show();
+            client.lbParticipants.Items.Add(NameOfParticipant);
         }
 
-        private void bStartServer_Click(object sender, RoutedEventArgs e)
-        {
-            server = new Server(tbServerIP.Text, tbServerPort.Text);
-            
-            while(server.isRunning)
-            {
-                lServerState.Content = "true";
-            }
-            
-        }
 
         private void bClose_Click(object sender, RoutedEventArgs e)
         {

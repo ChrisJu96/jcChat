@@ -5,10 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chat"
         mc:Ignorable="d"
-        Title="Client" Height="300" Width="300">
+        Title="Client" Height="653.333" Width="649.091">
     <Grid>
-        <Button x:Name="bSend" Content="Send" HorizontalAlignment="Left" Margin="207,214,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="bClose" Content="Close" HorizontalAlignment="Left" Margin="207,239,0,0" VerticalAlignment="Top" Width="75" Click="bClose_Click"/>
+        <Button x:Name="bSend" Content="Send" HorizontalAlignment="Left" Margin="476,592,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="bClose" Content="Close" HorizontalAlignment="Left" Margin="556,592,0,0" VerticalAlignment="Top" Width="75" Click="bClose_Click"/>
+        <Button x:Name="bConnect" Content="Connect" HorizontalAlignment="Left" Margin="556,567,0,0" VerticalAlignment="Top" Width="75" Click="bConnect_Click"/>
+        <ListBox x:Name="lbChat" HorizontalAlignment="Left" Height="527" Margin="10,10,0,0" VerticalAlignment="Top" Width="461"/>
+        <TextBox x:Name="tbTextToSend" HorizontalAlignment="Left" Height="70" Margin="10,542,0,0" TextWrapping="Wrap" Text="Type something..." VerticalAlignment="Top" Width="461"/>
+        <ListBox x:Name="lbParticipants" HorizontalAlignment="Left" Height="416" Margin="476,10,0,0" VerticalAlignment="Top" Width="155"/>
+        <TextBox x:Name="tbServerIP" HorizontalAlignment="Left" Height="23" Margin="476,539,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="105"/>
+        <TextBox x:Name="tbServerPort" HorizontalAlignment="Left" Height="23" Margin="586,539,0,0" TextWrapping="Wrap" Text="49000" VerticalAlignment="Top" Width="45"/>
+        <Button x:Name="bHost" Content="Host" HorizontalAlignment="Left" Margin="556,513,0,0" VerticalAlignment="Top" Width="75" Click="bHost_Click"/>
+        <TextBox x:Name="tbHostIP" HorizontalAlignment="Left" Height="23" Margin="476,485,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="105"/>
+        <TextBox x:Name="tbHostPort" HorizontalAlignment="Left" Height="23" Margin="586,485,0,0" TextWrapping="Wrap" Text="49000" VerticalAlignment="Top" Width="45"/>
 
     </Grid>
 </Window>
